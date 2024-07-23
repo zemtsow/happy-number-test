@@ -1,0 +1,101 @@
+:root {
+  --hover--primary-color: #afeeee;
+  --right-primary-color: #228b22;
+  --wront-primary-color: #fa8072;
+  --disabled-primary-color: #a9a9a9;
+  --square-primary-color: #8dec8f;
+}
+
+* {
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  margin: 10% auto;
+  & .content__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+    height: 200px;
+    & .task__block {
+      display: flex;
+      font-size: 22px;
+      gap: 0 4px;
+      & input {
+        width: 50px;
+        border: none;
+        font-size: 22px;
+        color: black;
+        border-bottom: 1px solid black;
+      }
+    }
+    & .square__block {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      & .square__container__show {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0 1em;
+        width: 30%;
+        animation: fadeIn 1s forwards;
+        opacity: 0;
+        transform: translate(0, 50px);
+        & .square {
+          width: 42px;
+          height: 42px;
+          background-color: var(--square-primary-color);
+          transition-duration: 0.1s;
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+      & .square__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0 1em;
+        width: 30%;
+        transform: translate(0, 0);
+        & .square {
+          width: 42px;
+          height: 42px;
+          background-color: var(--square-primary-color);
+          transition-duration: 0.1s;
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
+  }
+  & .button__container {
+    margin: 30% auto;
+  }
+  & button {
+    background-color: var(--hover--primary-color);
+    padding: 0.5em 4em;
+    outline: none;
+    border: none;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
