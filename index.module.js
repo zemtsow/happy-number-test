@@ -166,8 +166,6 @@ const generateAnotherMethod = () => {
     }
   }
 
-  options.taskIndex++;
-
   if (options.taskIndex < tasks.length) {
     generateMathMethod();
   }
@@ -184,6 +182,7 @@ const check = (e) => {
   e.preventDefault()
   const task = tasks[options.taskIndex]
   if (options.guess === task.result) {
+    options.taskIndex++;
     options.statuses.done()
     generateSquaresContainer()
     generateAnotherMethod()
