@@ -30,8 +30,9 @@ let options = {
         setTimeout(() => {
           style.backgroundColor = "#afeeee"
           style.color = "#000"
-          inputStyle.borderBottom = "1px solid #FA8072"
+          inputStyle.borderBottom = "1px solid #000"
           inputStyle.outlineColor = "#000"
+          inputStyle.color = "#000"
           inputStyle.borderBottom = "1px solid #000"
           return checkButton.innerText = "Check"
         }, 500)
